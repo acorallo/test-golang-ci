@@ -15,7 +15,7 @@ pipeline {
                     sh 'pwd'
                     sh 'go run main.go'
                 }
-            }
         }
     }
 }
+
