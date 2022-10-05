@@ -1,10 +1,6 @@
 pipeline {
-    agent {
-        docker { image 'public.ecr.aws/docker/library/golang:latest' }
-        environment {
-            GOCACHE = "/tmp"
-        }
-    }
+    agent {docker 'public.ecr.aws/docker/library/golang:latest'}
+    environment { GOCACHE = "/tmp" }
     stages {
         stage('Source') {
             steps {
@@ -18,6 +14,7 @@ pipeline {
             steps {
                     sh 'pwd'
                     sh 'go run main.go'
+                }
             }
         }
     }
