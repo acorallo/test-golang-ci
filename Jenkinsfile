@@ -1,5 +1,5 @@
 pipeline {
-    agent {docker 'public.ecr.aws/docker/library/golang:latest'}
+    agent {docker { image 'public.ecr.aws/docker/library/golang:latest'} }
     environment { GOCACHE = "/tmp" }
     stages {
         stage('Source') {
